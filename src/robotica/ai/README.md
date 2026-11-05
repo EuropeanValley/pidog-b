@@ -1,0 +1,3 @@
+# IA local
+
+Elegid **una** ruta de IA local para H3: visión con cámara o LLM + RAG con corpus local. Guardad aquí el código de inferencia y evaluación, separado de un cliente de API externa que reciba **imagen de la cámara + consulta textual con medida real**. Los pesos o corpus pequeños pueden ir en `data/` si su licencia lo permite. Documentad procedencia, versión, memoria ocupada, latencias, casos de prueba y comportamiento ante fallo. El modelo local debe ejecutarse en la Raspberry Pi del robot sin salida a Internet. La respuesta externa solo genera un informe y no controla actuadores; la credencial no se sube al repositorio.

@@ -1,0 +1,21 @@
+name: Calidad mínima
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python-offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Sintaxis Python
+        run: python -m compileall -q src
+      - name: Pruebas sin hardware
+        run: PYTHONPATH=src python -m unittest discover -s tests -v
+
+# La calificación del proyecto y las pruebas físicas no se automatizan aquí.

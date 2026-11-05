@@ -1,0 +1,27 @@
+# Copiar a robot.local.toml y completar; no guardar contraseñas ni tokens.
+[robot]
+platform = "POR_COMPLETAR" # pidog-v2 o picar-x
+raspberry_pi = "POR_COMPLETAR"
+robot_hat = "POR_COMPLETAR"
+
+[safety]
+# Ajustar tras medir el sensor y validar en el suelo.
+minimum_obstacle_cm = 25
+network_timeout_s = 2.0
+
+[ai]
+route = "POR_COMPLETAR" # vision o rag
+model_path = "POR_COMPLETAR"
+
+[external_ai]
+# Elegir un proveedor que acepte imagen + texto. Nunca guardar el valor de la clave.
+provider = "POR_COMPLETAR"
+model = "POR_COMPLETAR"
+credential_env = "ROBOT_EXTERNAL_AI_API_KEY"
+timeout_s = 10.0
+
+[iot]
+# Usar una red local del taller; no incluir credenciales aquí.
+bind_host = "127.0.0.1"
+port = 8000
+telemetry_interval_s = 1.0

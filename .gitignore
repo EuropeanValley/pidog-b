@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Configuración y secretos de cada robot
+.env
+.env.*
+!.env.example
+config/robot.local.toml
+*.pem
+*.key
+
+# Datos y evidencias grandes o privadas
+data/raw/
+media/raw/
+*.mp4
+*.mov
+*.h264
+*.bag
+*.db
+
+# Sistema y editores
+.DS_Store
+.idea/
+.vscode/
+*.img
+*.iso

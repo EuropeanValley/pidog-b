@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uax-robotica-equipo"
+version = "0.1.0"
+description = "Proyecto de equipo para Robótica y automatización"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# Las dependencias del robot deben fijarse después de confirmar modelo de Pi,
+# Raspberry Pi OS, revisión de HAT y ruta de IA de este equipo.
