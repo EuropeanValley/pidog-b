@@ -3,7 +3,7 @@
 | Integrante / usuario GitHub | Responsabilidad principal actual | Issue/PR y evidencia | Revisión realizada | Hito |
 | --- | --- | --- | --- | --- |
 | @foreverprogramming (Zihao Ying) | Instalación y preparación de la Raspberry Pi | [Issue](https://github.com/EuropeanValley/pidog-b/issues/2) | @eruiz05 | H1 |
-| @usuario | Montaje mecánico y ensamblaje del robot: chasis, sujeción de servos, ajuste de patas, estabilidad física y apoyo en pruebas de movimiento y seguridad. | Montaje del robot y validación del ajuste mecánico | Revisión de hardware con el equipo | H1-H4 |
+| @jorgee12-19 | Montaje mecánico y ensamblaje del robot: chasis, sujeción de servos, ajuste de patas, estabilidad física y apoyo en pruebas de movimiento y seguridad. | Montaje del robot y validación del ajuste mecánico | Revisión de hardware con el equipo | H1-H4 |
 | `@...` | | | | |
 | `@...` | | | | |
 | `@...` | | | | |
