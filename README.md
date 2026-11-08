@@ -4,16 +4,16 @@
 
 | Dato | Valor |
 | --- | --- |
-| Equipo | `POR_COMPLETAR` |
-| Plataforma | `PiDog V2` / `PiCar-X` |
-| Integrantes (usuario GitHub) | `@...`, `@...`, `@...`, `@...`, `@...` |
-| Raspberry Pi (modelo, RAM) | `POR_COMPLETAR` |
-| Robot HAT (revisión) | `POR_COMPLETAR` |
-| Misión elegida | `POR_COMPLETAR` |
-| Ruta de IA local | `Visión` / `LLM + RAG` |
-| Modelo externo por API | `POR_COMPLETAR` |
-| Interfaz IoT | `POR_COMPLETAR` |
-| Estado actual | `H1 / H2 / H3 / H4` |
+| Equipo | `PiDog B` |
+| Plataforma | `PiDog V2` |
+| Integrantes (usuario GitHub) | `@foreverprogramming`, `@jorgee12-19`, `@...`, `@...`, `@...` |
+| Raspberry Pi (modelo, RAM) | `Raspberry Pi 5, 16 GB RAM` |
+| Robot HAT (revisión) | `SunFounder PiDog HAT / revisión del kit PiDog V2` |
+| Misión elegida | `Inspección autónoma con parada segura y decisión local + informe externo` |
+| Ruta de IA local | `Visión` |
+| Modelo externo por API | `Modelo multimodal de imagen + texto` |
+| Interfaz IoT | `Web local adaptada a móvil con telemetría y control INICIO/PARADA` |
+| Estado actual | `H1 completado` |
 
 ## Primeros pasos
 
