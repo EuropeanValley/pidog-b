@@ -13,7 +13,7 @@
 | Ruta de IA local | `Visión` |
 | Modelo externo por API | `Modelo multimodal de imagen + texto` |
 | Interfaz IoT | `Web local adaptada a móvil con telemetría y control INICIO/PARADA` |
-| Estado actual | `H1 completado, avance en H2-H4` |
+| Estado actual | `H1 completado` |
 
 ## Primeros pasos
 
