@@ -18,10 +18,10 @@ Cada diagrama de flujo tiene una versión vectorial en [`media/`](../media/) (SV
 
 ## Misión y criterio de éxito
 
-- Plataforma y objetivo: `POR_COMPLETAR`.
-- Entorno físico, punto de inicio y fin: `POR_COMPLETAR`.
-- Entradas (sensores, cámara, operador) y salidas (movimiento, estado, interfaz): `POR_COMPLETAR`.
-- Resultado observable que contará como éxito: `POR_COMPLETAR`.
+- Plataforma y objetivo: PiDog V2, orientado a la inspección autónoma del entorno. El robot debe recorrer la zona de pruebas, detectar un obstáculo, llegar al puesto de inspección y detenerse en una posición segura tras decidir localmente `OK` o `INCIDENCIA` con un modelo ejecutado en la Raspberry Pi sin Internet.
+- Entorno físico, punto de inicio y fin: el robot parte desde una posición de reposo (`HOME` / posición segura) en el suelo de pruebas, avanza sobre una pista delimitada con curva suave y finaliza en una bahía de inspección marcada; el recorrido se cierra con `PARADA` y la detección final del estado del entorno para evitar colisión o caída.
+- Entradas (sensores, cámara, operador) y salidas (movimiento, estado, interfaz): entran la distancia frontal del sensor, la IMU, la cámara, la orden de `INICIO`/`PARADA` del operador y la conexión local; salen movimiento del robot, estado de misión, telemetría, imagen y decisiones locales/externas en la web o app de red local.
+- Resultado observable que contará como éxito: el robot avanza de forma segura, se detiene antes de un obstáculo y reanuda cuando se retira, llega al punto de inspección, toma una imagen y una distancia real, ejecuta la IA local en la Pi y queda detenido en `PARADA`; después, con Internet restablecido, envía la imagen y el texto multimodal a la API y muestra el informe en la interfaz sin que la respuesta externa pueda mover motores.
 
 ## Bloques del sistema
 
