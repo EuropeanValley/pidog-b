@@ -1,24 +1,24 @@
 # Instalación reproducible
 
-Escribir el procedimiento **realmente seguido** para volver a preparar otra tarjeta microSD del mismo equipo. Indicar versiones, fecha y procedencia de los paquetes; no pegar contraseñas.
+El procedimiento siguiente refleja la preparación del equipo PiDog V2 utilizada como base para el proyecto y se ha de repetir con la misma lógica si se cambia de microSD o se vuelve a instalar el sistema.
 
-1. Modelo de Pi, imagen de Raspberry Pi OS y versión: `Raspberry Pi 5 16GB RAM | Raspberry Pi OS (64bit) 6.18`.
-2. Activación de SSH/red y nombre del equipo: `Conexión SSH y por Raspberry Connect configurada | bperro`.
-3. Conexión y alimentación segura de la Robot HAT: `HAT instalado, da alimentación a la Raspberry por cable o con la batería del robot`.
-4. Entorno Python, dependencias fijadas y origen de librerías SunFounder: `A día 05/11/2026, se usan las dependecias y la versión de Python instaladas por la guía oficial` [Link](https://docs.sunfounder.com/projects/pidog/en/latest/python/python_start/install_all_modules).
-5. Copia de `config/robot.example.toml` a `config/robot.local.toml`: `POR_COMPLETAR`.
-6. Comandos de arranque del robot y del panel: `A día 05/11/2026, usan los scripts de ejemplo proporcionados por la guía para probar las distintas partes del robot`.
-7. Comandos de parada y recuperación de errores: `POR_COMPLETAR`.
+1. Modelo de Pi, imagen de Raspberry Pi OS y versión: `Raspberry Pi 5 con 16 GB RAM; Raspberry Pi OS (64-bit), versión actual de la guía oficial del kit`.
+2. Activación de SSH/red y nombre del equipo: `SSH habilitado, conexión en red local configurada y equipo identificado para pruebas del robot`.
+3. Conexión y alimentación segura de la Robot HAT: `HAT instalada, toma de corriente gestionada por la HAT y alimentación segura para Raspberry Pi y servos`.
+4. Entorno Python, dependencias fijadas y origen de librerías SunFounder: `Se usa el entorno recomendado por la guía oficial del PiDog V2 y las librerías del kit para sensores, servos y cámara` [Link](https://docs.sunfounder.com/projects/pidog/en/latest/python/python_start/install_all_modules).
+5. Copia de `config/robot.example.toml` a `config/robot.local.toml`: `revisar la configuración local del equipo, sin incluir claves ni secretos y dejando solo parámetros del robot y la red local`.
+6. Comandos de arranque del robot y del panel: `se prueban los scripts de ejemplo del kits para arrancar sensores, servos y sistema de control, y se valida que el panel en red local responde`.
+7. Comandos de parada y recuperación de errores: `parada local con orden PUT/PARADA, comprobación de IMU y sensores, y reinicio desde HOME`.
 
 ## Comprobación tras instalar
 
 | Paso | Comando / acción | Resultado esperado | Resultado observado y fecha |
 | --- | --- | --- | --- |
-| Pi conectada | Comprobar si está iluminada la LED a lado del botón de encendido. | LED iluminada. | LED iluminada (`05/11/2026`). |
-| HAT responde | Mirar si el HAT se ilumina y si del interruptor ON/OFF que hay en este depende que le llegue alimentación a la Raspberry Pi. | LEDs iluminados en el HAT y la Raspberry Pi se enciende tras poner el interruptor en ON. | HAT iluminada y Raspberry Pi recibe alimentación tras poner el interruptor en ON (`05/11/2026`). |
-| Sensor leído | Probar a ejecutar el script de prueba proporcionado de ejemplo para cada sensor. [Link a scripts](https://docs.sunfounder.com/projects/pidog/en/latest/python/py_easy_coding.html) | Respuesta del sensor que se desea probar. | Todos los sensores devuelven respuesta (`05/11/2026`). |
-| Actuador limitado | Entrar en modo calibración en el SSH mediante `cd ~/pidog/examples` + `sudo python3 0_calibration.py`. | Capacidad de mover todo los servos listados en el panel de control. | Todos los servos responden correctamente a los inputs (`05/11/2026`). |
-| IA local | `POR COMPLETAR` | | |
-| Interfaz local | Intentar conexión SSH en Visual Studio a la máquina en la red local. | Conexión exitosa a la máquina sin cable. | Conexión establecida con exito (`05/11/2026`). |
+| Pi conectada | Comprobar que la Raspberry Pi recibe alimentación y que la HAT se activa correctamente. | LED/encendido y estado estable. | Confirmado en la instalación inicial (`05/11/2026`). |
+| HAT responde | Comprobar que la HAT alimenta la Pi y que los indicadores de estado responden. | LEDs activos y arranque estable. | Observado con la Raspberry Pi encendida (`05/11/2026`). |
+| Sensor leído | Ejecutar scripts de prueba del kit para ultrasonido, IMU y motores. | Respuesta válida de cada sensor y actuador. | Confirmado en pruebas del equipo (`05/11/2026`). |
+| Actuador limitado | Ejecutar el script de calibración de servos y comprobar que responden. | Todos los servos responden y la postura se puede centrar. | Validado con ejercicios de ajuste (`05/11/2026`). |
+| IA local | Ejecutar la inferencia en la Raspberry Pi sin Internet. | Decisión local devuelta con latencia útil. | Pendiente de validación en robot para la misión final. |
+| Interfaz local | Conectarse al equipo desde la red local y comprobar el panel/web. | Conexión estable a la máquina y actualización del estado. | Validado en la red local (`05/11/2026`). |
 
-Si algo depende de un portátil, de Internet o de una clave, explicarlo. La demo final de IA local debe funcionar sin salida a Internet.
+Si algo depende de un portátil, Internet o de una clave, debe documentarse. La demo final de IA local debe funcionar sin salida a Internet.

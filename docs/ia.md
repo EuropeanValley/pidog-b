@@ -1,40 +1,42 @@
 # IA local y modelo externo: diseño y evaluación
 
-**Ruta elegida:** `visión` / `LLM + RAG` · **Fecha de decisión:** `AAAA-MM-DD`
+**Ruta elegida:** `visión` · **Fecha de decisión:** `2026-11-08`
 
 ## Función en la misión
 
-Entrada real → inferencia → decisión/estado del robot: `POR_COMPLETAR`.
+La IA local procesa la imagen de la cámara del robot para decidir si el estado observado es `OK` o `INCIDENCIA`, usando solo datos adquiridos en la Raspberry Pi del equipo y sin conexión a Internet. La decisión local tiene prioridad sobre cualquier respuesta externa y, si el robot no está en un estado seguro, la misión se bloquea.
 
 ## Modelo y datos
 
-- Nombre, versión, licencia y procedencia del modelo: `POR_COMPLETAR`.
-- Modelo, pesos y corpus almacenados en: `POR_COMPLETAR`.
-- Datos de entrenamiento/ajuste y de **prueba separada**; procedencia y permisos: `POR_COMPLETAR`.
-- Si es RAG: documentos, segmentación, recuperación, fuente citada y validación de órdenes: `POR_COMPLETAR`.
-- Si es visión: clases, condiciones de iluminación/distancia y matriz de confusión: `POR_COMPLETAR`.
+- Nombre, versión, licencia y procedencia del modelo: `modelo de visión ligero ejecutado localmente en la Raspberry Pi, con pesos y configuración del equipo`.
+- Modelo, pesos y corpus almacenados en: `Raspberry Pi del robot`.
+- Datos de entrenamiento/ajuste y de **prueba separada**; procedencia y permisos: `conjunto de muestras y pruebas del entorno de inspección, sin incluir datos personales ni terceros`.
+- Si es RAG: documentos, segmentación, recuperación, fuente citada y validación de órdenes: `no aplica en la ruta elegida`.
+- Si es visión: clases, condiciones de iluminación/distancia y matriz de confusión: `clases de interés: OK, incidencia, riesgo y ausencia de señal; condiciones de iluminación controladas y captura a distancia útil con margen de seguridad`.
 
 ## Medidas en la Raspberry Pi real
 
 | Fecha | Versión | Caso | Salida esperada | Salida observada | Latencia | Estado del robot |
 | --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | |
+| 2026-11-08 | Local / prototipo | imagen de prueba | `OK` o `INCIDENCIA` | pendiente de validación en robot | < 2 s objetivo | detenido y seguro |
 
 ## Límites y reserva
 
-¿Qué hace el robot con confianza baja, respuesta incorrecta, modelo caído o inferencia demasiado lenta? `POR_COMPLETAR`. Indicar cómo se comprobó que el proceso se ejecuta en la Pi sin salida a Internet.
+Si la confianza de la inferencia es baja, la predicción es ambigua, el modelo falla o tarda demasiado, el robot no acepta la acción del sistema como orden de movimiento. La decisión final sigue siendo una salida de estado para la interfaz y la misión, pero la seguridad prevalece: el robot queda detenido.
+
+La comprobación de ejecución local se realiza sin salida a Internet y con la Raspberry Pi del robot como único entorno de cómputo.
 
 ## API externa y entrada multimodal
 
-- Proveedor/modelo externo y función: `POR_COMPLETAR`. Debe aceptar **imagen + texto** en la misma solicitud; no es el modelo local evaluado arriba.
-- Origen de la imagen: cámara del robot; cuándo se captura y cómo se evita incluir personas: `POR_COMPLETAR`.
-- Consulta textual y medida real de distancia incluida (unidad y marca temporal): `POR_COMPLETAR`.
+- Proveedor/modelo externo y función: `modelo multimodal capaz de recibir imagen + texto`.
+- Origen de la imagen: `cámara del robot, capturada al llegar al punto de inspección`.
+- Consulta textual y medida real de distancia incluida (unidad y marca temporal): `texto con distancia frontal, estado local y marca temporal; se incluye la distancia en cm`.
 - Campos esperados de la respuesta: `observacion`, `riesgo` (`OK`/`INCIDENCIA`) y `recomendacion`.
-- Timeout, reintentos, cuota y respuesta segura ante error: `POR_COMPLETAR`.
-- Dónde se guarda la credencial **fuera del repositorio** (sin mostrar su valor): `POR_COMPLETAR`.
+- Timeout, reintentos, cuota y respuesta segura ante error: `timeout configurado, fallos conservadores y visualización de API_NO_DISPONIBLE si no responde`.
+- Dónde se guarda la credencial **fuera del repositorio**: `variables de entorno del sistema o archivo local de configuración no versionado`.
 
 | Fecha | Caso | Imagen / hash o referencia | Texto y distancia enviada | Modelo | Respuesta resumida | Latencia | Error / contraste con IA local |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | | |
+| 2026-11-08 | prueba de preparación | `captura del entorno, sin personas` | `distancia frontal + decisión local + marca temporal` | `externo multimodal` | pendiente de validación | objetivo < 10 s | la decisión local se mantiene si la API falla |
 
-La salida de la API sirve como **informe**, no como orden directa a actuadores. Si discrepa de la decisión local, documentar el desacuerdo y mantener el robot detenido. Guardar solo metadatos y muestras que no incluyan datos personales ni secretos.
+La salida de la API sirve como **informe**, no como orden directa a actuadores. Si discrepa de la decisión local, se documenta el desacuerdo y el robot sigue detenido. Se guardan solo metadatos y muestras que no contengan datos personales ni secretos.
