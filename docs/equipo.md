@@ -2,7 +2,7 @@
 
 | Integrante / usuario GitHub | Responsabilidad principal actual | Issue/PR y evidencia | Revisión realizada | Hito |
 | --- | --- | --- | --- | --- |
-| `@...` | | | | |
+| @foreverprogramming (Zihao Ying) | Instalación y preparación de la Raspberry Pi | [Issue](https://github.com/EuropeanValley/pidog-b/issues/2) | @eruiz05 | H1 |
 | `@...` | | | | |
 | `@...` | | | | |
 | `@...` | | | | |
