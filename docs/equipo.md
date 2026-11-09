@@ -5,7 +5,7 @@
 | @foreverprogramming (Zihao Ying) | Instalación y preparación de la Raspberry Pi | [Issue](https://github.com/EuropeanValley/pidog-b/issues/2) | @eruiz05 | H1 |
 | @jorgee12-19 | Montaje mecánico y ensamblaje del robot: chasis, sujeción de servos, ajuste de patas, estabilidad física y apoyo en pruebas de movimiento y seguridad; además organizó la misión final y actualizó la base del README del proyecto. | Montaje del robot validado, revisión de la misión final y actualización del README base | @eruiz05 | H1 |
 | @danyel430 | Realizó los diagramas de recorrido completo, arranque, ciclo de seguridad y estados. Todos ellos presentes en la carpeta "media" | https://github.com/EuropeanValley/pidog-b/pull/1#issue-6243163806 | @eruiz05 | H1 |
-| @eruiz05 | Montaje mecánico y ensamblaje del robot: chasis, sujeción de los servos, ajuste de patas, estabilidad y apoyo en pruebas varias de movimiento. Encargado de h1 | | | |
+| @eruiz05 | Montaje mecánico y ensamblaje del robot: chasis, sujeción de los servos, ajuste de patas, estabilidad y apoyo en pruebas varias de movimiento. Encargado de h1 | | @foreverprogramming | H1 |
 | @Jorge-Maraver | Diagrama de bloques del sistema y colaboración en el montaje del robot | [PR](https://github.com/EuropeanValley/pidog-b/pull/6) | @eruiz05 | H1 |
 
 ## Acuerdo de trabajo
