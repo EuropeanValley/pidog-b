@@ -6,7 +6,7 @@
 | @jorgee12-19 | Montaje mecánico y ensamblaje del robot: chasis, sujeción de servos, ajuste de patas, estabilidad física y apoyo en pruebas de movimiento y seguridad; además organizó la misión final y actualizó la base del README del proyecto. | Montaje del robot validado, revisión de la misión final y actualización del README base | @eruiz05 | H1 |
 | `@...` | | | | |
 | `@...` | | | | |
-| `@...` | | | | |
+| @Jorge-Maraver | Diagrama de bloques del sistema y colaboración en el montaje del robot | [PR](https://github.com/EuropeanValley/pidog-b/pull/6) | @eruiz05 | H1 |
 
 ## Acuerdo de trabajo
 

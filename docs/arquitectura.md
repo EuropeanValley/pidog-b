@@ -25,23 +25,92 @@ Cada diagrama de flujo tiene una versión vectorial en [`media/`](../media/) (SV
 
 ## Bloques del sistema
 
-Adaptar el diagrama al material confirmado de vuestro PiDog V2 o PiCar-X. Explicar qué función ejecuta la Raspberry Pi y cuál ejecuta la Robot HAT. Añadir alimentación y conexiones reales o pendientes.
-
 ```mermaid
-flowchart LR
-  Sensores --> HAT[Robot HAT]
-  HAT --> Pi[Raspberry Pi: Python]
-  Pi --> Mision[Máquina de estados]
-  Camara[Cámara / entrada de lenguaje] --> IA[Modelo local]
-  IA --> Mision
-  Camara --> API[Modelo externo: informe multimodal]
-  Pi --> API
-  API --> Web
-  Mision --> HAT
-  HAT --> Actuadores
-  Pi <--> Web[Interfaz en red local]
-  Seguridad[Parada y límites] --> Mision
+
+flowchart TB
+    subgraph HARDWARE["Hardware del PiDog"]
+        direction LR
+
+        ALT["Altavoz"]
+        RGB["RGB"]
+        SER["Servos"]
+        ULT["Ultrasonidos"]
+        TAC["Sensor táctil"]
+        IMU["IMU"]
+        MIC["Micrófono"]
+        CAM["Cámara"]
+
+        HAT["Robot HAT"]
+        BAT["Batería"]
+        PI["Raspberry Pi"]
+
+        ULT --> HAT
+        TAC --> HAT
+        IMU --> HAT
+        MIC --> HAT
+        CAM --> PI
+
+        HAT --> ALT
+        HAT --> RGB
+        HAT --> SER
+
+        HAT --> BAT
+        BAT --> PI
+
+        HAT <--> PI
+    end
+
+    subgraph EXTERNO["Comunicación externa"]
+        direction LR
+        UI["UI online"]
+        CLOUD["Modelo en la nube"]
+    end
+
+    subgraph SOFTWARE["Software en Raspberry Pi"]
+        direction TB
+
+        VER["Verificación de componentes"]
+        ALG["Algoritmos y reglas"]
+        MOD["Modelo local"]
+        INP["Inputs locales de componentes"]
+        DUI["Directrices de UI online"]
+        IMO["Inputs del modelo online"]
+        FSM["Máquina de estados"]
+        ACT["Lanzador de acciones"]
+        LIM["Limitaciones y suspensiones"]
+
+        MOD --> ALG
+        INP --> ALG
+        DUI --> ALG
+        IMO --> ALG
+
+        VER --> FSM
+        ALG --> FSM
+
+        FSM --> ACT
+        FSM --> LIM
+    end
+
+    PI <--> UI
+    PI <--> CLOUD
+
+    classDef sensor fill:#cfe6c9,stroke:#7aa35a,color:#000
+    classDef actuator fill:#d9e8fb,stroke:#7aa0d8,color:#000
+    classDef power fill:#dfd0e6,stroke:#9b72b0,color:#000
+    classDef hw fill:#eeeeee,stroke:#888,color:#000
+    classDef sw fill:#ffffff,stroke:#666,color:#000
+
+    class ULT,TAC,IMU,MIC,CAM sensor
+    class ALT,RGB,SER actuator
+    class BAT power
+    class HAT,PI hw
+    class FSM,ACT,LIM,VER,ALG,MOD,INP,DUI,IMO sw
+    class UI,CLOUD sensor
 ```
+
+### Arquitectura con componentes reales
+
+![Diagrama del hardware](../media/DiagramFiles/Bloques%20del%20sistema_hardware.png)
 
 ## Flujo de operación
 
