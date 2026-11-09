@@ -6,7 +6,7 @@
 | --- | --- |
 | Equipo | `PiDog B` |
 | Plataforma | `PiDog V2` |
-| Integrantes (usuario GitHub) | `@foreverprogramming`, `@jorgee12-19`, `@...`, `@...`, `@...` |
+| Integrantes (usuario GitHub) | `@foreverprogramming`, `@jorgee12-19`, `@eruiz05`, `@Jorge-Maraver`, `@danyel430` |
 | Raspberry Pi (modelo, RAM) | `Raspberry Pi 5, 16 GB RAM` |
 | Robot HAT (revisión) | `SunFounder PiDog HAT / revisión del kit PiDog V2` |
 | Misión elegida | `Inspección autónoma con parada segura y decisión local + informe externo` |
