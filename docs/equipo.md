@@ -6,7 +6,7 @@
 | `@...` | | | | |
 | `@...` | | | | |
 | `@...` | | | | |
-| @Jorge-Maraver | Diagrama de bloques del sistema |  | @eruiz05 | H1 |
+| @Jorge-Maraver | Diagrama de bloques del sistema y colaboración en el montaje del robot |  | @eruiz05 | H1 |
 
 ## Acuerdo de trabajo
 
