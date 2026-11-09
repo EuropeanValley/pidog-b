@@ -6,7 +6,7 @@
 | `@...` | | | | |
 | `@...` | | | | |
 | `@...` | | | | |
-| `@...` | | | | |
+| @Jorge-Maraver | Diagrama de bloques del sistema |  | @eruiz05 | H1 |
 
 ## Acuerdo de trabajo
 
