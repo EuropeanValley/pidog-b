@@ -110,7 +110,7 @@ flowchart TB
 
 ### Arquitectura con componentes reales
 
-![Diagrama del hardware](../../media/DiagramFiles/Bloques del sistema_hardware.png)
+![Diagrama del hardware](../media/DiagramFiles/Bloques%20del%20sistema_hardware.png)
 
 ## Flujo de operación
 
