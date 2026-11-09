@@ -25,8 +25,6 @@ Cada diagrama de flujo tiene una versión vectorial en [`media/`](../media/) (SV
 
 ## Bloques del sistema
 
-Adaptar el diagrama al material confirmado de vuestro PiDog V2 o PiCar-X. Explicar qué función ejecuta la Raspberry Pi y cuál ejecuta la Robot HAT. Añadir alimentación y conexiones reales o pendientes.
-
 ```mermaid
 
 flowchart TB
@@ -109,6 +107,10 @@ flowchart TB
     class FSM,ACT,LIM,VER,ALG,MOD,INP,DUI,IMO sw
     class UI,CLOUD sensor
 ```
+
+## Arquitectura con componentes reales
+
+![Diagrama del hardware](../media/DiagramFiles/Bloques del sistema_hardware.png)
 
 ## Flujo de operación
 
